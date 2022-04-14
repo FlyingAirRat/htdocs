@@ -18,5 +18,6 @@
             <input type="reset" value="초기화"></input>
         </div>
     </form>
+    <a href="list.php"><button>게시글 목록으로</button></a>
 </body>
 </html>

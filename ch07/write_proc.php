@@ -12,4 +12,9 @@
     ";
     mysqli_query($conn, $sql);
     mysqli_close($conn);
+    if(!$result){
+        print "에러 발생!";
+        die();
+    };
+    header("Location: list.php");
 ?>
