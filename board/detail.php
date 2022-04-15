@@ -23,6 +23,7 @@
 </head>
 <body>
     <a href="list.php"><button>목록으로</button></a>
+    <a href="del_proc.php?i_board=<?=$i_board?>"><button>삭제</button></a>
     <div>제목 : <?= $title?></div>
     <div>작성일시 : <?=$create_at?></div>
     <div>내용 : <?=$ctnt?></div>
