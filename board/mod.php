@@ -22,7 +22,9 @@
 </head>
 <body>
     <h1>글수정</h1>
-    <form action="write_proc.php" method="post">
+    <form action="mod_proc.php" method="post">
+    <input type="hidden" name="i_board" value="<?=$i_board?>">
+    <p>글번호: <?=$i_board?></p>
         <div><input type="text" name="title" value="<?=$title?>"></div>
         <div>
             <textarea name="ctnt" id="" cols="30" rows="10" value=""><?=$ctnt?></textarea>
