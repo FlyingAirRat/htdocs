@@ -3,6 +3,7 @@
     $conn = get_conn();
     $sql = "select * from t_board order by i_board desc";
     $result = mysqli_query($conn,$sql);
+    $row_num = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,8 @@
     <a href="write.php"><button>글쓰기</button></a>
     <table>
         <tr>
-            <th>번호</th>
+            <th>순서</th>
+            <th>글번호</th>
             <th>제목</th>
             <th>작성일시</th>
         </tr>
@@ -27,10 +29,12 @@
                 $title = $row['title'];
                 $create_at = $row['create_at'];
                 print "<tr>";
+                print "<td>${row_num}</td>";
                 print "<td>${i_board}</td>";
                 print "<td><a href='detail.php?i_board=${i_board}'>${title}</a></td>";
                 print "<td>${create_at}</td>";
                 print "</tr>";
+                $row_num++;
             }
         ?>
     </table>

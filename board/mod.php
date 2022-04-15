@@ -10,7 +10,6 @@
     if($row = mysqli_fetch_assoc($result)){
         $title = $row['title'];
         $ctnt = $row['ctnt'];
-        $create_at = $row['create_at'];
     }
 ?>
 <!DOCTYPE html>
@@ -19,14 +18,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>글수정</title>
 </head>
 <body>
-    <a href="list.php"><button>목록으로</button></a>
-    <a href="del_proc.php?i_board=<?=$i_board?>"><button>삭제</button></a>
-    <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>
-    <div>제목 : <?= $title?></div>
-    <div>작성일시 : <?=$create_at?></div>
-    <div>내용 : <?=$ctnt?></div>
+    <h1>글수정</h1>
+    <form action="write_proc.php" method="post">
+        <div><input type="text" name="title" value="<?=$title?>"></div>
+        <div>
+            <textarea name="ctnt" id="" cols="30" rows="10" value=""><?=$ctnt?></textarea>
+        </div>
+        <div>
+            <input type="submit" value="등록"></input>
+            <input type="reset" value="초기화"></input>
+        </div>
+    </form>
+    <a href="list.php"><button>게시글 목록으로</button></a>
 </body>
 </html>
