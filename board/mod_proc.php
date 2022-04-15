@@ -8,7 +8,7 @@
     print $ctnt;
     print $i_board;
     $sql=
-    "UPDATE t_board SET title = '${title}', ctnt = '${ctnt}'
+    "UPDATE t_board SET title = '${title}', ctnt = '${ctnt}', mod_at = now()
     WHERE i_board = '${i_board}'";
     if($title === "" || $ctnt === ""){
         print "제목이나 내용이 없습니다.";
