@@ -20,7 +20,6 @@ function ins_user(&$param)
 function sel_user(&$param)
 {
     $uid = $param["uid"];
-    $nm = $param["nm"];
 
     
     $sql = 
