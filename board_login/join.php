@@ -9,13 +9,13 @@
 <body>
     <h1>회원가입</h1>
     <a href="login.php">login</a>
-    <form action="join.proc.php" method="post">
+    <form action="join_proc.php" method="post">
         <div><input type="text" name="uid" placeholder="아이디"></div>
         <div><input type="password" name="upw" placeholder="비밀번호"></div>
         <div><input type="password" name="confirm_upw" placeholder="비밀번호 확인"></div>
         <div><input type="text" name="nm" placeholder="이름"></div>
         <div>성별: 
-            <label>여자<input type="checkbox" name="gender" value="0"></label>
+            <label>남자<input type="checkbox" name="gender" value="0"></label>
             <label>여자<input type="checkbox" name="gender" value="0"></label>
         </div>
             <input type="submit" value="회원가입">
