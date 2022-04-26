@@ -1,0 +1,16 @@
+<?php
+    include_once "db.php";
+    function ins_board(&$param)
+    {
+        $i_user = $param["i_user"];
+        $title = $param["title"];
+        $ctnt = $param["ctnt"];
+        $sql=
+        "INSERT INTO t_board(title,ctnt,i_user)
+        VALUES('${title}', '${ctnt}', $i_user)
+        ";
+        $conn = get_conn();
+        mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        header("Location: list.php");
+    }

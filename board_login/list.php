@@ -18,7 +18,17 @@
 <body>
     <div id="container">
         <header>
-            <?=isset($_SESSION["login_user"]) ? $nm. "님 환영합니다" : ""?>
+            <?php
+            if(isset($_SESSION["login_user"])){
+                print $nm."님 환영합니다.";
+                print "<a href='write.php>글쓰기</a>";
+                print "<a href='logout.php>로그아웃</a>";
+            } else{
+                print "<a href='login.php'>로그인</a>";
+                header("Location: login.php");
+            }
+            ?>
+            
             <a href="list.php">리스트</a>
             <a href="write.php">글작성</a>
         </header>
