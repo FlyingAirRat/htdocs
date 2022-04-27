@@ -2,4 +2,4 @@
 html, body { height: 100%; }
 
 #container { display: grid; grid-template-rows: 100px 1fr; min-height: 100vh; }
-#container > header { background-color: rgb(141, 133, 241); display: flex; align-items: center; padding: 10px 20px; }
+#container > header { background-color: rgb(12, 133, 241); display: flex; align-items: center; padding: 10px 20px; }
