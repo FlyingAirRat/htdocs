@@ -3,13 +3,11 @@
 
     session_start();
     $nm = "";
-    $page = $_GET["page"];
-    if(!$page) { 
-        $page = 1; 
-    } else {
-        $page = intval($page);
-    }
-    print "page : " . $page;
+
+    $page = 1;
+    if(isset($_GET["page"])) {       
+        $page = intval($_GET["page"]);
+    }     
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
@@ -40,6 +38,7 @@
                 <?php if(isset($_SESSION["login_user"])) { ?>
                     <a href="write.php">글쓰기</a>
                     <a href="logout.php">로그아웃</a>
+                    <a href="profile.php">프로필</a>
                 <?php } else { ?>
                     <a href="login.php">로그인</a>
                 <?php } ?>                
@@ -69,7 +68,9 @@
             </table>
             <div>
             <?php for($i=1; $i<=$paging_count; $i++) { ?>
-                <span><a href="list.php?page=<?=$i?>"><?=$i?></a></span>                    
+                <span class="<?=$i===$page ? "pageSelected" : ""?>">
+                    <a href="list.php?page=<?=$i?>"><?=$i?></a>
+                </span>
             <?php } ?>
             </div>
         </main>
